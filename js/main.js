@@ -102,6 +102,7 @@ function renderProducts(filter = ""){
       p.title[currentLang].toLowerCase().includes(filter.toLowerCase()) ||
       p.description[currentLang].toLowerCase().includes(filter.toLowerCase())
     );
+
     if(catProducts.length > 0){
       const catTitle = document.createElement("h2");
       catTitle.className = "category-title";
@@ -114,21 +115,24 @@ function renderProducts(filter = ""){
       catProducts.forEach(p => {
         const col = document.createElement("div");
         col.className = "col-12 col-sm-6 col-md-4 mb-3";
-        col.innerHTML = `
-          <div class="card product-card h-100" style="cursor:pointer;">
-            <img src="${p.img}" class="card-img-top" alt="${p.title[currentLang]}" onclick="openProductModal(${p.id})">
-            <div class="card-body">
-              <h5 class="card-title" onclick="openProductModal(${p.id})">${p.title[currentLang]}</h5>
-              <p class="card-text">${p.description[currentLang]}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="price-tag">€ ${p.price.toFixed(2)}</span>
-                <button class="btn btn-sm btn-primary" style="font-size:0.85rem;" onclick="addToCart(${p.id})">
-                  <i class="fa fa-cart-plus"></i> ${translate("Agregar","Add","Toevoegen")}
-                </button>
-              </div>
-            </div>
-          </div>
-        `;
+
+       col.innerHTML = `
+  <div class="card product-card h-100" style="cursor:pointer;" onclick="openProductModal(${p.id})">
+    <img src="${p.img}" class="card-img-top" alt="${p.title[currentLang]}">
+    <div class="card-body">
+      <h5 class="card-title">${p.title[currentLang]}</h5>
+      <p class="card-text">${p.description[currentLang]}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="price-tag">€ ${p.price.toFixed(2)}</span>
+        <button class="btn btn-sm btn-primary" style="font-size:0.85rem;"
+          onclick="event.stopPropagation(); addToCart(${p.id})">
+          <i class="fa fa-cart-plus"></i> ${translate("Agregar","Add","Toevoegen")}
+        </button>
+      </div>
+    </div>
+  </div>
+`;
+
         row.appendChild(col);
       });
 
@@ -136,7 +140,6 @@ function renderProducts(filter = ""){
     }
   });
 }
-
 // ─────────── MODAL ───────────
 function openProductModal(productId){
   const product = Object.values(products).flat().find(p => p.id === productId);
@@ -246,12 +249,12 @@ document.getElementById("langSelect").addEventListener("change", e => {
 
 // ─────────── APLICAR IDIOMA ───────────
 function applyLanguage(){
-  document.getElementById("titleMain").textContent = "BATTER BOUTIQUE – AREPA";
-  document.getElementById("subtitleMain").textContent = translate("Comida callejera Holandesa y Venezolana","Dutch & Venezuela Street Food","Nederlands & Venezolaans Street Food");
+  document.getElementById("titleMain").textContent = "BATTER BOUTIQUE ";
+  document.getElementById("subtitleMain").textContent = translate("“Sabores Holandeses y Venezolanos”","Dutch & Venezuela Street Food","Nederlands & Venezolaans Street Food");
   document.getElementById("cartTitle").textContent = translate("🛒 Carrito","🛒 Cart","🛒 Winkelwagen");
   document.getElementById("clearCartBtn").textContent = translate("Vaciar carrito","Clear cart","Winkelwagen leegmaken");
   document.getElementById("checkoutBtn").textContent = translate("Finalizar pedido","Checkout","Bestelling afronden");
-  document.getElementById("searchInput").placeholder = translate("Buscar comida... (ej: arepa, pepito, empanada)","Search food... (e.g. arepa, pepito, empanada)","Zoek eten... (bijv. arepa, pepito, empanada)");
+  document.getElementById("searchInput").placeholder = translate("Buscar comida... (ej: pancakesSalados, pancakesDulces, cakes, drinks)","Search food... (e.g. savory pancakes, sweet pancakes, cakes, drinks)","Zoek eten... (bijv. hartige pannenkoeken, zoete pannenkoeken, cakes, drinks )");
 }
 
 // ─────────── INIT ───────────

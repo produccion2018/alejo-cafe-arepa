@@ -1,218 +1,186 @@
+// ─────────── CONFIGURACIÓN ───────────
 const ownerWhatsapp = "31613966455";
 let selectedProductModal = null;
 
-const products = [
-  {
-    id: 1,
-    category: "club",
-    title: { es: "CLUB HOUSE", en: "CLUB HOUSE", nl: "CLUB HOUSE" },
-    subtitle: { es: "", en: "", nl: "" },
-    description: {
-      es: "4 slices of bread, supreme chicken, ham, cheese, bacon, egg, lettuce, tomato + french fries",
-      en: "4 slices of bread, supreme chicken, ham, cheese, bacon, egg, lettuce, tomato + french fries",
-      nl: "4 sneetjes brood, kip, ham, kaas, bacon, ei, sla, tomaat + friet"
-    },
-    img: "misProductos/IMG01.jpg",
-    price: 9.50
-  },
-  {
-    id: 2,
-    category: "choripanes",
-    title: { es: "CHORIPANES", en: "CHORIPANES", nl: "CHORIPANEN" },
-    subtitle: { es: "You must try them!", en: "You must try them!", nl: "Je moet ze proberen!" },
-    description: {
-      es: "Reina, Pork, Reina Palad, Shredded frentel, avocado",
-      en: "Reina, Pork, Reina Palad, Shredded frentel, avocado",
-      nl: "Reina, varkensvlees, avocado, kaas"
-    },
-    img: "misProductos/IMG02.jpg",
-    price: 8.00
-  },
-  {
-    id: 3,
-    category: "arepas",
-    title: { es: "AREPAS", en: "AREPAS", nl: "AREPAS" },
-    subtitle: { es: "Gigantic & try them!", en: "Gigantic & try them!", nl: "Gigantisch & probeer ze!" },
-    description: {
-      es: "Pork, Regular (Beef or chicken & avocado), Shredded Beef, Vegan, Double + fries",
-      en: "Pork, Regular (Beef or chicken & avocado), Shredded Beef, Vegan, Double + fries",
-      nl: "Varken, rund, kip, avocado, vegan, dubbel + friet"
-    },
-    img: "misProductos/IMG03.jpg",
-    price: 7.50
-  },
-  {
-    id: 4,
-    category: "pepitos",
-    title: { es: "PEPITOS", en: "PEPITOS", nl: "PEPITOS" },
-    subtitle: { es: "", en: "", nl: "" },
-    description: {
-      es: "Regular: 30 cm baguette (beef, chicken, ham, cheese, cabbage, carrot, lettuce, tomato, corn, onion + shoestring potatoes)",
-      en: "Regular: 30 cm baguette (beef, chicken, ham, cheese, cabbage, carrot, lettuce, tomato, corn, onion + shoestring potatoes)",
-      nl: "30cm baguette (rund, kip, ham, kaas, groenten + frietjes)"
-    },
-    img: "misProductos/IMG04.jpg",
-    price: 10.00
-  },
-  {
-    id: 5,
-    category: "sandwiches",
-    title: { es: "SANDWICHES", en: "SANDWICHES", nl: "SANDWICHES" },
-    subtitle: { es: "The classics", en: "The classics", nl: "De klassiekers" },
-    description: {
-      es: "Ham & Cheese, Shredded Cheese",
-      en: "Ham & Cheese, Shredded Cheese",
-      nl: "Ham & kaas, geraspte kaas"
-    },
-    img: "misProductos/IMG05.jpg",
-    price: 6.50
-  },
-  {
-    id: 6,
-    category: "empanadas",
-    title: { es: "EMPANADAS", en: "EMPANADAS", nl: "EMPANADAS" },
-    subtitle: { es: "The classics", en: "The classics", nl: "De klassiekers" },
-    description: {
-      es: "Scraden egg with vegetables and ham",
-      en: "Scraden egg with vegetables and ham",
-      nl: "Ei met groenten en ham"
-    },
-    img: "misProductos/IMG06.jpg",
-    price: 5.00
-  },
-  {
-    id: 7,
-    category: "omelette",
-    title: { es: "OMELETTE", en: "OMELETTE", nl: "OMELET" },
-    subtitle: { es: "The classics", en: "The classics", nl: "De klassiekers" },
-    description: {
-      es: "Ham & Cheese, Shredded Cheese",
-      en: "Ham & Cheese, Shredded Cheese",
-      nl: "Ham & kaas, geraspte kaas"
-    },
-    img: "misProductos/IMG07.jpg",
-    price: 6.00
-  }
-];
+// ─────────── PRODUCTOS ───────────
+const products = {
+  pancakesSalados: [
+    { id: 1, category: "pancakesSalados", title: { es: "Natural", en: "Natural", nl: "Natuurlijk" }, description: { es: "Pancake natural", en: "Natural pancake", nl: "Natuurlijke pannenkoek" }, img: "misProductos/pancake01.jpg", price: 6.99 },
+    { id: 2, category: "pancakesSalados", title: { es: "Cheese", en: "Cheese", nl: "Kaas" }, description: { es: "Pancake con queso", en: "Cheese pancake", nl: "Pannenkoek met kaas" }, img: "misProductos/pancake02.jpg", price: 8.49 },
+    { id: 3, category: "pancakesSalados", title: { es: "Bacon", en: "Bacon", nl: "Bacon" }, description: { es: "Pancake con bacon", en: "Bacon pancake", nl: "Pannenkoek met bacon" }, img: "misProductos/pancake03.jpg", price: 8.49 },
+    { id: 4, category: "pancakesSalados", title: { es: "Champignon, onion, paprika", en: "Champignon, onion, paprika", nl: "Champignon, ui, paprika" }, description: { es: "Pancake con champiñones, cebolla y pimentón", en: "Pancake with mushrooms, onion, paprika", nl: "Pannenkoek met champignons, ui, paprika" }, img: "misProductos/pancake04.jpg", price: 8.49 },
+    { id: 5, category: "pancakesSalados", title: { es: "Cheese + Bacon", en: "Cheese + Bacon", nl: "Kaas + Bacon" }, description: { es: "Pancake con queso y bacon", en: "Cheese & Bacon pancake", nl: "Pannenkoek met kaas & bacon" }, img: "misProductos/pancake05.jpg", price: 9.99 },
+    { id: 6, category: "pancakesSalados", title: { es: "Cheese + Champignon + Onion + Pepper", en: "Cheese + Champignon + Onion + Pepper", nl: "Kaas + Champignon + Ui + Paprika" }, description: { es: "Pancake completo con queso, champiñones, cebolla y pimentón", en: "Full pancake with cheese, mushroom, onion, pepper", nl: "Volledige pannenkoek met kaas, champignon, ui, paprika" }, img: "misProductos/pancake06.jpg", price: 9.99 },
+    { id: 7, category: "pancakesSalados", title: { es: "Bacon + Champignon + Onion + Pepper", en: "Bacon + Champignon + Onion + Pepper", nl: "Bacon + Champignon + Ui + Paprika" }, description: { es: "Pancake con bacon, champiñones, cebolla y pimentón", en: "Bacon & mushroom pancake", nl: "Pannenkoek met bacon, champignon, ui, paprika" }, img: "misProductos/pancake07.jpg", price: 9.99 },
+    { id: 8, category: "pancakesSalados", title: { es: "Cheese + Bacon + Champignon + Onion + Pepper", en: "Cheese + Bacon + Champignon + Onion + Pepper", nl: "Kaas + Bacon + Champignon + Ui + Paprika" }, description: { es: "Pancake completo con queso, bacon, champiñones, cebolla y pimentón", en: "Full pancake with cheese, bacon, mushroom, onion, pepper", nl: "Volledige pannenkoek met kaas, bacon, champignon, ui, paprika" }, img: "misProductos/pancake08.jpg", price: 9.99 }
+  ],
+  pancakesDulces: [
+    { id: 9, category: "pancakesDulces", title: { es: "Nutella", en: "Nutella", nl: "Nutella" }, description: { es: "Pancake dulce", en: "Sweet pancake", nl: "Zoete pannenkoek" }, img: "misProductos/pancake09.jpg", price: 8.49 },
+    { id: 10, category: "pancakesDulces", title: { es: "Strawberries", en: "Strawberries", nl: "Aardbeien" }, description: { es: "Pancake dulce", en: "Sweet pancake", nl: "Zoete pannenkoek" }, img: "misProductos/pancake10.jpg", price: 8.49 },
+    { id: 11, category: "pancakesDulces", title: { es: "Banana", en: "Banana", nl: "Banaan" }, description: { es: "Pancake dulce", en: "Sweet pancake", nl: "Zoete pannenkoek" }, img: "misProductos/pancake11.jpg", price: 8.49 },
+    { id: 12, category: "pancakesDulces", title: { es: "Cheese + Nutella", en: "Cheese + Nutella", nl: "Kaas + Nutella" }, description: { es: "Pancake con queso y Nutella", en: "Cheese & Nutella pancake", nl: "Pannenkoek met kaas & Nutella" }, img: "misProductos/pancake12.jpg", price: 9.99 },
+    { id: 13, category: "pancakesDulces", title: { es: "Nutella + Strawberries", en: "Nutella + Strawberries", nl: "Nutella + Aardbeien" }, description: { es: "Pancake con Nutella y fresas", en: "Nutella & strawberries pancake", nl: "Pannenkoek met Nutella & aardbeien" }, img: "misProductos/pancake13.jpg", price: 9.99 },
+    { id: 14, category: "pancakesDulces", title: { es: "Nutella + Banana", en: "Nutella + Banana", nl: "Nutella + Banaan" }, description: { es: "Pancake con Nutella y plátano", en: "Nutella & banana pancake", nl: "Pannenkoek met Nutella & banaan" }, img: "misProductos/pancake14.jpg", price: 9.99 },
+    { id: 15, category: "pancakesDulces", title: { es: "Strawberries + Banana", en: "Strawberries + Banana", nl: "Aardbeien + Banaan" }, description: { es: "Pancake con fresas y plátano", en: "Strawberries & banana pancake", nl: "Pannenkoek met aardbeien & banaan" }, img: "misProductos/pancake15.jpg", price: 9.99 }
+  ],
+  cakes: [
+    { id: 16, category: "cakes", title: { es: "Cheesecake", en: "Cheesecake", nl: "Cheesecake" }, description: { es: "Cheesecake individual", en: "Individual cheesecake", nl: "Individuele cheesecake" }, img: "misProductos/cake01.jpg", price: 5.99 },
+    { id: 17, category: "cakes", title: { es: "Lemon pie", en: "Lemon pie", nl: "Citroen taart" }, description: { es: "Pastel de limón", en: "Lemon pie", nl: "Citroen taart" }, img: "misProductos/cake02.jpg", price: 5.99 },
+    { id: 18, category: "cakes", title: { es: "Apple pie", en: "Apple pie", nl: "Appeltaart" }, description: { es: "Pastel de manzana", en: "Apple pie", nl: "Appeltaart" }, img: "misProductos/cake03.jpg", price: 5.99 },
+    { id: 19, category: "cakes", title: { es: "Apple kisses", en: "Apple kisses", nl: "Appelkussen" }, description: { es: "Pequeño pastel de manzana", en: "Small apple pie", nl: "Klein appeltaartje" }, img: "misProductos/cake04.jpg", price: 5.99 },
+    { id: 20, category: "cakes", title: { es: "Chocolate Cake", en: "Chocolate Cake", nl: "Chocolade taart" }, description: { es: "Pastel de chocolate", en: "Chocolate Cake", nl: "Chocolade taart" }, img: "misProductos/cake05.jpg", price: 5.99 }
+  ],
+  stroopwafel: [
+    { id: 21, category: "stroopwafel", title: { es: "Stroopwafel", en: "Stroopwafel", nl: "Stroopwafel" }, description: { es: "Stroopwafel clásico", en: "Classic Stroopwafel", nl: "Klassieke Stroopwafel" }, img: "misProductos/stroopwafel01.jpg", price: 5.99 },
+    { id: 22, category: "stroopwafel", title: { es: "Nutella", en: "Nutella", nl: "Nutella" }, description: { es: "Stroopwafel con Nutella", en: "Stroopwafel with Nutella", nl: "Stroopwafel met Nutella" }, img: "misProductos/stroopwafel02.jpg", price: 5.99 },
+    { id: 23, category: "stroopwafel", title: { es: "Strawberries", en: "Strawberries", nl: "Aardbeien" }, description: { es: "Stroopwafel con fresas", en: "Stroopwafel with strawberries", nl: "Stroopwafel met aardbeien" }, img: "misProductos/stroopwafel03.jpg", price: 5.99 },
+    { id: 24, category: "stroopwafel", title: { es: "Pistachio", en: "Pistachio", nl: "Pistache" }, description: { es: "Stroopwafel con pistacho", en: "Stroopwafel with pistachio", nl: "Stroopwafel met pistache" }, img: "misProductos/stroopwafel04.jpg", price: 5.99 },
+    { id: 25, category: "stroopwafel", title: { es: "Marshmallow", en: "Marshmallow", nl: "Marshmallow" }, description: { es: "Stroopwafel con malvavisco", en: "Stroopwafel with marshmallow", nl: "Stroopwafel met marshmallow" }, img: "misProductos/stroopwafel05.jpg", price: 5.99 },
+    { id: 26, category: "stroopwafel", title: { es: "Choco sprinkles", en: "Choco sprinkles", nl: "Chocolade hagelslag" }, description: { es: "Stroopwafel con chispas de chocolate", en: "Stroopwafel with chocolate sprinkles", nl: "Stroopwafel met chocolade hagelslag" }, img: "misProductos/stroopwafel06.jpg", price: 5.99 },
+    { id: 27, category: "stroopwafel", title: { es: "Choco raisin", en: "Choco raisin", nl: "Chocolade rozijn" }, description: { es: "Stroopwafel con chocolate y pasas", en: "Stroopwafel with chocolate & raisins", nl: "Stroopwafel met chocolade & rozijnen" }, img: "misProductos/stroopwafel07.jpg", price: 5.99 },
+    { id: 28, category: "stroopwafel", title: { es: "Smarties", en: "Smarties", nl: "Smarties" }, description: { es: "Stroopwafel con Smarties", en: "Stroopwafel with Smarties", nl: "Stroopwafel met Smarties" }, img: "misProductos/stroopwafel08.jpg", price: 5.99 }
+  ],
+  drinks: [
+    { id: 29, category: "drinks", title: { es: "Coffe", en: "Coffe", nl: "Koffie" }, description: { es: "Bebida caliente", en: "Hot drink", nl: "Warme drank" }, img: "misProductos/drink01.jpg", price: 3.50 },
+    { id: 30, category: "drinks", title: { es: "Coffe milk", en: "Coffe milk", nl: "Koffiemelk" }, description: { es: "Bebida caliente con leche", en: "Hot drink with milk", nl: "Warme drank met melk" }, img: "misProductos/drink02.jpg", price: 3.50 },
+    { id: 31, category: "drinks", title: { es: "Capuchino", en: "Capuchino", nl: "Cappuccino" }, description: { es: "Bebida caliente", en: "Hot drink", nl: "Warme drank" }, img: "misProductos/drink03.jpg", price: 3.50 },
+    { id: 32, category: "drinks", title: { es: "Tea", en: "Tea", nl: "Thee" }, description: { es: "Té caliente", en: "Hot tea", nl: "Warme thee" }, img: "misProductos/drink04.jpg", price: 3.50 },
+    { id: 33, category: "drinks", title: { es: "Chocomel hot o cool", en: "Chocomel hot or cold", nl: "Chocomel warm of koud" }, description: { es: "Bebida de chocolate", en: "Chocolate drink", nl: "Chocoladedrank" }, img: "misProductos/drink05.jpg", price: 3.50 },
+    { id: 34, category: "drinks", title: { es: "Lipton/ Ice tea", en: "Lipton/ Ice tea", nl: "Lipton/ Ice tea" }, description: { es: "Té frío", en: "Iced tea", nl: "Ijsthee" }, img: "misProductos/drink06.jpg", price: 3.50 },
+    { id: 35, category: "drinks", title: { es: "Coca Cola/ Cero/ Light", en: "Coca Cola/ Zero/ Light", nl: "Coca Cola/ Zero/ Light" }, description: { es: "Bebida gaseosa", en: "Soda drink", nl: "Frisdrank" }, img: "misProductos/drink07.jpg", price: 3.50 },
+    { id: 36, category: "drinks", title: { es: "Sprite", en: "Sprite", nl: "Sprite" }, description: { es: "Bebida gaseosa", en: "Soda drink", nl: "Frisdrank" }, img: "misProductos/drink08.jpg", price: 3.50 },
+    { id: 37, category: "drinks", title: { es: "Fanta Orange", en: "Fanta Orange", nl: "Fanta Orange" }, description: { es: "Bebida gaseosa", en: "Soda drink", nl: "Frisdrank" }, img: "misProductos/drink09.jpg", price: 3.50 },
+    { id: 38, category: "drinks", title: { es: "Still water", en: "Still water", nl: "Plat water" }, description: { es: "Agua sin gas", en: "Still water", nl: "Plat water" }, img: "misProductos/drink10.jpg", price: 3.50 },
+    { id: 39, category: "drinks", title: { es: "Sparkling water", en: "Sparkling water", nl: "Sprankelend water" }, description: { es: "Agua con gas", en: "Sparkling water", nl: "Sprankelend water" }, img: "misProductos/drink11.jpg", price: 3.50 }
+  ]
+};
 
+// ─────────── VARIABLES ───────────
 let cart = JSON.parse(localStorage.getItem("cartAlejandroBecerra")) || [];
 let currentLang = localStorage.getItem("langAlejandroBecerra") || "es";
-
 document.getElementById("langSelect").value = currentLang;
 
-function renderProducts(filter = "") {
-  const container = document.getElementById("productsContainer");
-  container.innerHTML = "";
-
-  const filtered = products.filter(p =>
-    p.title[currentLang].toLowerCase().includes(filter.toLowerCase()) ||
-    p.description[currentLang].toLowerCase().includes(filter.toLowerCase())
-  );
-
-  filtered.forEach(p => {
-    const col = document.createElement("div");
-    col.className = "col-12 col-md-6";
-
-    col.innerHTML = `
-      <div class="product-card">
-        <h3 class="product-title" style="cursor:pointer;" onclick="openProductModal(${p.id})">${p.title[currentLang]}</h3>
-        <p class="product-subtitle">${p.subtitle[currentLang]}</p>
-
-        <img src="${p.img}" class="product-img" alt="${p.title[currentLang]}" onclick="openProductModal(${p.id})" style="cursor:pointer;">
-
-        <p class="product-list mt-2">${p.description[currentLang]}</p>
-
-        <div class="d-flex justify-content-between align-items-center mt-2">
-          <span class="price-tag">€ ${p.price.toFixed(2)}</span>
-          <button class="btn btn-add btn-sm" onclick="addToCart(${p.id})">
-            <i class="fa fa-cart-plus"></i> ${translate("Agregar", "Add", "Toevoegen")}
-          </button>
-        </div>
-      </div>
-    `;
-
-    container.appendChild(col);
-  });
-}
-
-function translate(es, en, nl) {
-  if (currentLang === "es") return es;
-  if (currentLang === "en") return en;
+// ─────────── FUNCIONES BÁSICAS ───────────
+function translate(es, en, nl){
+  if(currentLang==="es") return es;
+  if(currentLang==="en") return en;
   return nl;
 }
 
-/* CARRITO */
-function addToCart(productId) {
-  const product = products.find(p => p.id === productId);
+function saveCart(){ localStorage.setItem("cartAlejandroBecerra", JSON.stringify(cart)); }
+
+function addToCart(productId){
+  const product = Object.values(products).flat().find(p => p.id === productId);
   const existing = cart.find(item => item.id === productId);
+  if(existing){ existing.qty += 1; } 
+  else { cart.push({...product, qty: 1}); }
+  saveCart(); renderCart();
+  Swal.fire({icon:"success",title:translate("Agregado al carrito","Added to cart","Toegevoegd aan winkelwagen"),timer:1200,showConfirmButton:false});
+}
 
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ ...product, qty: 1 });
-  }
+function removeFromCart(productId){
+  cart = cart.filter(item => item.id !== productId);
+  saveCart(); renderCart();
+}
 
-  saveCart();
-  renderCart();
+function changeQty(productId, amount){
+  const item = cart.find(i => i.id === productId);
+  if(!item) return;
+  item.qty += amount;
+  if(item.qty <= 0){ removeFromCart(productId); } 
+  else { saveCart(); renderCart(); }
+}
 
-  Swal.fire({
-    icon: "success",
-    title: translate("Agregado al carrito", "Added to cart", "Toegevoegd aan winkelwagen"),
-    timer: 1200,
-    showConfirmButton: false
+// ─────────── RENDER CARDS ───────────
+function renderProducts(filter = ""){
+  const container = document.getElementById("productsContainer");
+  container.innerHTML = "";
+  const allCategories = Object.keys(products);
+
+  allCategories.forEach(cat => {
+    const catProducts = products[cat].filter(p => 
+      p.title[currentLang].toLowerCase().includes(filter.toLowerCase()) ||
+      p.description[currentLang].toLowerCase().includes(filter.toLowerCase())
+    );
+    if(catProducts.length > 0){
+      const catTitle = document.createElement("h2");
+      catTitle.className = "category-title";
+      catTitle.textContent = translate(cat, cat, cat); 
+      container.appendChild(catTitle);
+
+      const row = document.createElement("div");
+      row.className = "row";
+
+      catProducts.forEach(p => {
+        const col = document.createElement("div");
+        col.className = "col-12 col-sm-6 col-md-4 mb-3";
+        col.innerHTML = `
+          <div class="card product-card h-100" style="cursor:pointer;">
+            <img src="${p.img}" class="card-img-top" alt="${p.title[currentLang]}" onclick="openProductModal(${p.id})">
+            <div class="card-body">
+              <h5 class="card-title" onclick="openProductModal(${p.id})">${p.title[currentLang]}</h5>
+              <p class="card-text">${p.description[currentLang]}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">€ ${p.price.toFixed(2)}</span>
+                <button class="btn btn-sm btn-primary" style="font-size:0.85rem;" onclick="addToCart(${p.id})">
+                  <i class="fa fa-cart-plus"></i> ${translate("Agregar","Add","Toevoegen")}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        row.appendChild(col);
+      });
+
+      container.appendChild(row);
+    }
   });
 }
 
-function removeFromCart(productId) {
-  cart = cart.filter(item => item.id !== productId);
-  saveCart();
-  renderCart();
+// ─────────── MODAL ───────────
+function openProductModal(productId){
+  const product = Object.values(products).flat().find(p => p.id === productId);
+  selectedProductModal = product;
+  document.getElementById("modalTitle").textContent = product.title[currentLang];
+  document.getElementById("modalImage").src = product.img;
+  document.getElementById("modalDesc").textContent = product.description[currentLang];
+  document.getElementById("modalPrice").textContent = "€ " + product.price.toFixed(2);
+  document.getElementById("modalAddText").textContent = translate("Agregar al carrito","Add to cart","Toevoegen aan winkelwagen");
+  const modal = new bootstrap.Modal(document.getElementById("productModal"));
+  modal.show();
 }
 
-function changeQty(productId, amount) {
-  const item = cart.find(i => i.id === productId);
-  if (!item) return;
-
-  item.qty += amount;
-
-  if (item.qty <= 0) {
-    removeFromCart(productId);
-  } else {
-    saveCart();
-    renderCart();
-  }
+function addToCartFromModal(){
+  if(!selectedProductModal) return;
+  addToCart(selectedProductModal.id);
 }
 
-function renderCart() {
+// ─────────── RENDER CART ───────────
+function renderCart(){
   const container = document.getElementById("cartItems");
   const totalEl = document.getElementById("cartTotal");
   const countEl = document.getElementById("cartCount");
-
   container.innerHTML = "";
-  let total = 0;
-  let count = 0;
+  let total = 0, count = 0;
 
   cart.forEach(item => {
     total += item.price * item.qty;
     count += item.qty;
 
     const div = document.createElement("div");
-    div.className = "cart-item";
-
+    div.className = "cart-item d-flex justify-content-between align-items-center mb-2";
     div.innerHTML = `
-      <div class="cart-item-title">${item.title[currentLang]}</div>
-      <div>€ ${(item.price * item.qty).toFixed(2)}</div>
-
+      <div>
+        <b>${item.title[currentLang]}</b><br>
+        <small>€ ${item.price.toFixed(2)} x ${item.qty}</small>
+      </div>
       <div class="cart-controls">
-        <button onclick="changeQty(${item.id}, -1)">-</button>
-        <span><b>${item.qty}</b></span>
-        <button onclick="changeQty(${item.id}, 1)">+</button>
-        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})">
-          <i class="fa fa-trash"></i>
-        </button>
+        <button class="btn btn-sm btn-secondary" onclick="changeQty(${item.id},-1)">-</button>
+        <span class="mx-1"><b>${item.qty}</b></span>
+        <button class="btn btn-sm btn-secondary" onclick="changeQty(${item.id},1)">+</button>
+        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})"><i class="fa fa-trash"></i></button>
       </div>
     `;
-
     container.appendChild(div);
   });
 
@@ -220,132 +188,55 @@ function renderCart() {
   countEl.textContent = count;
 }
 
-function saveCart() {
-  localStorage.setItem("cartAlejandroBecerra", JSON.stringify(cart));
-}
-
-function clearCart() {
-  cart = [];
-  saveCart();
-  renderCart();
-}
-
-function toggleCart() {
-  document.getElementById("cartPanel").classList.toggle("active");
-}
-
-/* CHECKOUT */
-function checkout() {
-  if (cart.length === 0) {
-    Swal.fire({
-      icon: "warning",
-      title: translate("Carrito vacío", "Empty cart", "Lege winkelwagen"),
-      text: translate("Agrega productos antes de finalizar.", "Add products before checkout.", "Voeg producten toe.")
-    });
+// ─────────── FINALIZAR PEDIDO ───────────
+function checkout(){
+  if(cart.length === 0){
+    Swal.fire(translate("Carrito vacío","Cart empty","Winkelwagen leeg"), "", "warning");
     return;
   }
 
   Swal.fire({
-    title: translate("Finalizar Pedido", "Checkout", "Bestelling afronden"),
+    title: translate("Finalizar pedido","Checkout","Bestelling afronden"),
     html: `
-      <input type="text" id="customerName" class="swal2-input" placeholder="${translate("Tu nombre", "Your name", "Jouw naam")}">
-      <input type="text" id="customerAddress" class="swal2-input" placeholder="${translate("Dirección (si delivery)", "Address (if delivery)", "Adres (bij bezorging)")}">
-
-      <select id="deliveryType" class="swal2-select">
-        <option value="delivery">${translate("Delivery", "Delivery", "Bezorging")}</option>
-        <option value="pickup">${translate("Retirar en local", "Pick-up", "Afhalen")}</option>
+      <input type="text" id="swalName" class="swal2-input" placeholder="${translate("Nombre","Name","Naam")}">
+      <input type="text" id="swalAddress" class="swal2-input" placeholder="${translate("Dirección (solo si es Delivery)","Address (if Delivery)","Adres (alleen bij bezorging)")}">
+      <select id="swalType" class="swal2-input">
+        <option value="Delivery">${translate("Delivery","Delivery","Bezorging")}</option>
+        <option value="Retiro">${translate("Retiro en el local","Pickup at store","Afhalen in winkel")}</option>
       </select>
     `,
-    confirmButtonText: translate("Enviar por WhatsApp", "Send via WhatsApp", "Versturen via WhatsApp"),
     showCancelButton: true,
-    cancelButtonText: translate("Cancelar", "Cancel", "Annuleren"),
+    confirmButtonText: translate("Enviar por WhatsApp","Send via WhatsApp","Versturen via WhatsApp"),
+    cancelButtonText: translate("Cancelar","Cancel","Annuleren"),
     preConfirm: () => {
-      const name = document.getElementById("customerName").value.trim();
-      const address = document.getElementById("customerAddress").value.trim();
-      const deliveryType = document.getElementById("deliveryType").value;
-
-      if (!name) {
-        Swal.showValidationMessage(translate("Escribe tu nombre.", "Enter your name.", "Vul je naam in."));
-        return false;
-      }
-
-      return { name, address, deliveryType };
+      const name = document.getElementById("swalName").value;
+      const address = document.getElementById("swalAddress").value;
+      const type = document.getElementById("swalType").value;
+      if(!name) Swal.showValidationMessage(translate("Ingresa tu nombre","Enter your name","Voer je naam in"));
+      return { name, address, type };
     }
-  }).then((result) => {
-    if (!result.isConfirmed) return;
-
-    const { name, address, deliveryType } = result.value;
-
-    let message = `📌 *${translate("NUEVO PEDIDO", "NEW ORDER", "NIEUWE BESTELLING")} - BATTER BOUTIQUE*\n\n`;
-    message += `👤 ${translate("Cliente", "Customer", "Klant")}: *${name}*\n`;
-
-    if (deliveryType === "delivery") {
-      message += `🚚 ${translate("Tipo", "Type", "Type")}: *${translate("Delivery", "Delivery", "Bezorging")}*\n`;
-      message += `📍 ${translate("Dirección", "Address", "Adres")}: *${address || translate("NO INDICADA", "NOT PROVIDED", "NIET OPGEGEVEN")}*\n`;
-    } else {
-      message += `🏪 ${translate("Tipo", "Type", "Type")}: *${translate("Retira en local", "Pick-up", "Afhalen")}*\n`;
+  }).then(result => {
+    if(result.isConfirmed){
+      let message = `*Pedido de ${result.value.name}*\nTipo: ${result.value.type}\nDirección: ${result.value.address}\n\nProductos:\n`;
+      cart.forEach(i => { message += `${i.title[currentLang]} x ${i.qty} - €${(i.price*i.qty).toFixed(2)}\n`; });
+      message += `\n*Total: €${document.getElementById("cartTotal").textContent}*`;
+      window.open(`https://wa.me/${ownerWhatsapp}?text=${encodeURIComponent(message)}`, "_blank");
+      clearCart();
     }
-
-    message += `\n🛒 *${translate("Productos", "Products", "Producten")}:*\n`;
-
-    let total = 0;
-    cart.forEach(item => {
-      total += item.price * item.qty;
-      message += `- ${item.title[currentLang]} x${item.qty} (€ ${(item.price * item.qty).toFixed(2)})\n`;
-    });
-
-    message += `\n💰 ${translate("Total", "Total", "Totaal")}: *€ ${total.toFixed(2)}*\n\n`;
-    message += `✅ ${translate("Pedido generado desde el menú digital.", "Order generated from the digital menu.", "Bestelling gemaakt via het digitale menu.")}\n`;
-    message += `👨‍💻 ${translate("Sistema", "System", "Systeem")}: Alejandro Becerra`;
-
-    const whatsappUrl = `https://wa.me/${ownerWhatsapp}?text=${encodeURIComponent(message)}`;
-
-    // ✅ FIX PARA CELULAR / TABLET / PC
-    if (/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)) {
-      window.location.href = whatsappUrl;
-    } else {
-      window.open(whatsappUrl, "_blank");
-    }
-
-    clearCart();
-
-    Swal.fire({
-      icon: "success",
-      title: translate("Pedido enviado!", "Order sent!", "Bestelling verzonden!"),
-      text: translate("Se abrió WhatsApp con el mensaje listo.", "WhatsApp opened with message ready.", "WhatsApp is geopend met het bericht."),
-      timer: 1800,
-      showConfirmButton: false
-    });
   });
 }
 
-/* MODAL PRODUCTO */
-function openProductModal(productId) {
-  const product = products.find(p => p.id === productId);
-  selectedProductModal = product;
+// ─────────── OTROS ───────────
+function clearCart(){ cart=[]; saveCart(); renderCart(); }
+function toggleCart(){ document.getElementById("cartPanel").classList.toggle("active"); }
 
-  document.getElementById("modalTitle").textContent = product.title[currentLang];
-  document.getElementById("modalName").textContent = product.title[currentLang];
-  document.getElementById("modalDesc").textContent = product.description[currentLang];
-  document.getElementById("modalPrice").textContent = product.price.toFixed(2);
-  document.getElementById("modalImage").src = product.img;
-
-  const modal = new bootstrap.Modal(document.getElementById("productModal"));
-  modal.show();
-}
-
-function addToCartFromModal() {
-  if (!selectedProductModal) return;
-  addToCart(selectedProductModal.id);
-}
-
-/* BUSCADOR */
-document.getElementById("searchInput").addEventListener("input", (e) => {
+// ─────────── BUSCADOR ───────────
+document.getElementById("searchInput").addEventListener("input", e => {
   renderProducts(e.target.value);
 });
 
-/* IDIOMA */
-document.getElementById("langSelect").addEventListener("change", (e) => {
+// ─────────── CAMBIO DE IDIOMA ───────────
+document.getElementById("langSelect").addEventListener("change", e => {
   currentLang = e.target.value;
   localStorage.setItem("langAlejandroBecerra", currentLang);
   applyLanguage();
@@ -353,34 +244,17 @@ document.getElementById("langSelect").addEventListener("change", (e) => {
   renderCart();
 });
 
-function applyLanguage() {
-  document.getElementById("titleMain").textContent =
-    currentLang === "es" ? "BATTER BOUTIQUE – AREPA" :
-    currentLang === "en" ? "BATTER BOUTIQUE – AREPA" :
-    "BATTER BOUTIQUE – AREPA";
-
-  document.getElementById("subtitleMain").textContent =
-    currentLang === "es" ? "Comida callejera Holandesa y Venezolana" :
-    currentLang === "en" ? "Dutch & Venezuela Street Food" :
-    "Nederlands & Venezolaans Street Food";
-
-  document.getElementById("cartTitle").textContent =
-    translate("🛒 Carrito", "🛒 Cart", "🛒 Winkelwagen");
-
-  document.getElementById("clearCartBtn").textContent =
-    translate("Vaciar carrito", "Clear cart", "Winkelwagen leegmaken");
-
-  document.getElementById("checkoutBtn").textContent =
-    translate("Finalizar pedido", "Checkout", "Bestelling afronden");
-
-  document.getElementById("totalText").innerHTML =
-    translate("Total: €", "Total: €", "Totaal: €") + `<span id="cartTotal">${document.getElementById("cartTotal").textContent}</span>`;
-
-  document.getElementById("searchInput").placeholder =
-    translate("Buscar comida... (ej: arepa, pepito, empanada)", "Search food... (e.g. arepa, pepito, empanada)", "Zoek eten... (bijv. arepa, pepito, empanada)");
+// ─────────── APLICAR IDIOMA ───────────
+function applyLanguage(){
+  document.getElementById("titleMain").textContent = "BATTER BOUTIQUE – AREPA";
+  document.getElementById("subtitleMain").textContent = translate("Comida callejera Holandesa y Venezolana","Dutch & Venezuela Street Food","Nederlands & Venezolaans Street Food");
+  document.getElementById("cartTitle").textContent = translate("🛒 Carrito","🛒 Cart","🛒 Winkelwagen");
+  document.getElementById("clearCartBtn").textContent = translate("Vaciar carrito","Clear cart","Winkelwagen leegmaken");
+  document.getElementById("checkoutBtn").textContent = translate("Finalizar pedido","Checkout","Bestelling afronden");
+  document.getElementById("searchInput").placeholder = translate("Buscar comida... (ej: arepa, pepito, empanada)","Search food... (e.g. arepa, pepito, empanada)","Zoek eten... (bijv. arepa, pepito, empanada)");
 }
 
-/* INIT */
+// ─────────── INIT ───────────
 applyLanguage();
 renderProducts();
 renderCart();

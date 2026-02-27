@@ -5,12 +5,12 @@ let selectedProductModal = null;
 // ─────────── PRODUCTOS ───────────
 const products = {
   pancakesSalados: [
-    { id: 1, category: "pancakesSalados", title: { es: "Natural", en: "Natural", nl: "Natuurlijk" }, description: { es: "Pancake natural", en: "Natural pancake", nl: "Natuurlijke pannenkoek" }, img: "misProductos/pancake01.jpg", price: 6.99 },
-    { id: 2, category: "pancakesSalados", title: { es: "Cheese", en: "Cheese", nl: "Kaas" }, description: { es: "Pancake con queso", en: "Cheese pancake", nl: "Pannenkoek met kaas" }, img: "misProductos/pancake02.jpg", price: 8.49 },
-    { id: 3, category: "pancakesSalados", title: { es: "Bacon", en: "Bacon", nl: "Bacon" }, description: { es: "Pancake con bacon", en: "Bacon pancake", nl: "Pannenkoek met bacon" }, img: "misProductos/pancake03.jpg", price: 8.49 },
-    { id: 4, category: "pancakesSalados", title: { es: "Champignon, onion, paprika", en: "Champignon, onion, paprika", nl: "Champignon, ui, paprika" }, description: { es: "Pancake con champiñones, cebolla y pimentón", en: "Pancake with mushrooms, onion, paprika", nl: "Pannenkoek met champignons, ui, paprika" }, img: "misProductos/pancake04.jpg", price: 8.49 },
-    { id: 5, category: "pancakesSalados", title: { es: "Cheese + Bacon", en: "Cheese + Bacon", nl: "Kaas + Bacon" }, description: { es: "Pancake con queso y bacon", en: "Cheese & Bacon pancake", nl: "Pannenkoek met kaas & bacon" }, img: "misProductos/pancake05.jpg", price: 9.99 },
-    { id: 6, category: "pancakesSalados", title: { es: "Cheese + Champignon + Onion + Pepper", en: "Cheese + Champignon + Onion + Pepper", nl: "Kaas + Champignon + Ui + Paprika" }, description: { es: "Pancake completo con queso, champiñones, cebolla y pimentón", en: "Full pancake with cheese, mushroom, onion, pepper", nl: "Volledige pannenkoek met kaas, champignon, ui, paprika" }, img: "misProductos/pancake06.jpg", price: 9.99 },
+    { id: 1, category: "pancakesSalados", title: { es: "Natural", en: "Natural", nl: "Natuurlijk" }, description: { es: "Pancake natural", en: "Natural pancake", nl: "Natuurlijke pannenkoek" }, img: "misProductos/IMG01.jpg", price: 6.99 },
+    { id: 2, category: "pancakesSalados", title: { es: "Cheese", en: "Cheese", nl: "Kaas" }, description: { es: "Pancake con queso", en: "Cheese pancake", nl: "Pannenkoek met kaas" }, img: "misProductos/IMG02.jpg", price: 8.49 },
+    { id: 3, category: "pancakesSalados", title: { es: "Bacon", en: "Bacon", nl: "Bacon" }, description: { es: "Pancake con bacon", en: "Bacon pancake", nl: "Pannenkoek met bacon" }, img: "misProductos/IMG03.jpg", price: 8.49 },
+    { id: 4, category: "pancakesSalados", title: { es: "Champignon, onion, paprika", en: "Champignon, onion, paprika", nl: "Champignon, ui, paprika" }, description: { es: "Pancake con champiñones, cebolla y pimentón", en: "Pancake with mushrooms, onion, paprika", nl: "Pannenkoek met champignons, ui, paprika" }, img: "misProductos/IMG04.jpg", price: 8.49 },
+    { id: 5, category: "pancakesSalados", title: { es: "Cheese + Bacon", en: "Cheese + Bacon", nl: "Kaas + Bacon" }, description: { es: "Pancake con queso y bacon", en: "Cheese & Bacon pancake", nl: "Pannenkoek met kaas & bacon" }, img: "misProductos/IMG05.jpg", price: 9.99 },
+    { id: 6, category: "pancakesSalados", title: { es: "Cheese + Champignon + Onion + Pepper", en: "Cheese + Champignon + Onion + Pepper", nl: "Kaas + Champignon + Ui + Paprika" }, description: { es: "Pancake completo con queso, champiñones, cebolla y pimentón", en: "Full pancake with cheese, mushroom, onion, pepper", nl: "Volledige pannenkoek met kaas, champignon, ui, paprika" }, img: "misProductos/IMG06.jpg", price: 9.99 },
     { id: 7, category: "pancakesSalados", title: { es: "Bacon + Champignon + Onion + Pepper", en: "Bacon + Champignon + Onion + Pepper", nl: "Bacon + Champignon + Ui + Paprika" }, description: { es: "Pancake con bacon, champiñones, cebolla y pimentón", en: "Bacon & mushroom pancake", nl: "Pannenkoek met bacon, champignon, ui, paprika" }, img: "misProductos/pancake07.jpg", price: 9.99 },
     { id: 8, category: "pancakesSalados", title: { es: "Cheese + Bacon + Champignon + Onion + Pepper", en: "Cheese + Bacon + Champignon + Onion + Pepper", nl: "Kaas + Bacon + Champignon + Ui + Paprika" }, description: { es: "Pancake completo con queso, bacon, champiñones, cebolla y pimentón", en: "Full pancake with cheese, bacon, mushroom, onion, pepper", nl: "Volledige pannenkoek met kaas, bacon, champignon, ui, paprika" }, img: "misProductos/pancake08.jpg", price: 9.99 }
   ],
@@ -30,6 +30,7 @@ const products = {
     { id: 19, category: "cakes", title: { es: "Apple kisses", en: "Apple kisses", nl: "Appelkussen" }, description: { es: "Pequeño pastel de manzana", en: "Small apple pie", nl: "Klein appeltaartje" }, img: "misProductos/cake04.jpg", price: 5.99 },
     { id: 20, category: "cakes", title: { es: "Chocolate Cake", en: "Chocolate Cake", nl: "Chocolade taart" }, description: { es: "Pastel de chocolate", en: "Chocolate Cake", nl: "Chocolade taart" }, img: "misProductos/cake05.jpg", price: 5.99 }
   ],
+  
   stroopwafel: [
     { id: 21, category: "stroopwafel", title: { es: "Stroopwafel", en: "Stroopwafel", nl: "Stroopwafel" }, description: { es: "Stroopwafel clásico", en: "Classic Stroopwafel", nl: "Klassieke Stroopwafel" }, img: "misProductos/stroopwafel01.jpg", price: 5.99 },
     { id: 22, category: "stroopwafel", title: { es: "Nutella", en: "Nutella", nl: "Nutella" }, description: { es: "Stroopwafel con Nutella", en: "Stroopwafel with Nutella", nl: "Stroopwafel met Nutella" }, img: "misProductos/stroopwafel02.jpg", price: 5.99 },
@@ -250,14 +251,60 @@ document.getElementById("langSelect").addEventListener("change", e => {
 // ─────────── APLICAR IDIOMA ───────────
 function applyLanguage(){
   document.getElementById("titleMain").textContent = "BATTER BOUTIQUE ";
-  document.getElementById("subtitleMain").textContent = translate("“Sabores Holandeses y Venezolanos”","Dutch & Venezuela Street Food","Nederlands & Venezolaans Street Food");
+  document.getElementById("subtitleMain").textContent = translate("“Sabores Holandeses ”","Dutch Flavor","Nederlandse smaken");
   document.getElementById("cartTitle").textContent = translate("🛒 Carrito","🛒 Cart","🛒 Winkelwagen");
   document.getElementById("clearCartBtn").textContent = translate("Vaciar carrito","Clear cart","Winkelwagen leegmaken");
   document.getElementById("checkoutBtn").textContent = translate("Finalizar pedido","Checkout","Bestelling afronden");
   document.getElementById("searchInput").placeholder = translate("Buscar comida... (ej: pancakesSalados, pancakesDulces, cakes, drinks)","Search food... (e.g. savory pancakes, sweet pancakes, cakes, drinks)","Zoek eten... (bijv. hartige pannenkoeken, zoete pannenkoeken, cakes, drinks )");
+applyNosotrosLanguage();
+
+}
+
+// nosotro // ─────────── TRADUCCIÓN SECCIÓN NOSOTROS ───────────
+const nosotrosContent = {
+  es: {
+    title: "Nosotros",
+    p1: `En <strong>Batter Boutique</strong> no vendemos postres. Creamos momentos.
+    Nacimos de una obsesión: transformar el clásico <em>stroopwafel holandés</em>
+    en una experiencia moderna, artesanal y memorable.`,
+    p2: `Nuestro equipo combina creatividad y pasión por la cocina rápida,
+    asegurando que cada pedido sea especial y memorable.`
+  },
+  en: {
+    title: "About Us",
+    p1: `At <strong>Batter Boutique</strong> we don’t sell desserts. We create moments.
+    We were born from an obsession: transforming the classic <em>Dutch stroopwafel</em>
+    into a modern, handcrafted and memorable experience.`,
+    p2: `Our team blends creativity and passion for fast cuisine,
+    ensuring every order feels special and unforgettable.`
+  },
+  nl: {
+    title: "Over Ons",
+    p1: `Bij <strong>Batter Boutique</strong> verkopen we geen desserts. We creëren momenten.
+    We zijn ontstaan uit één obsessie: de klassieke <em>Nederlandse stroopwafel</em>
+    omvormen tot een moderne, ambachtelijke ervaring.`,
+    p2: `Ons team combineert creativiteit en passie voor snelle keuken,
+    zodat elke bestelling bijzonder en memorabel is.`
+  }
+};
+
+function applyNosotrosLanguage(){
+  const data = nosotrosContent[currentLang];
+  const title = document.querySelector(".nosotros-title");
+  const paragraphs = document.querySelectorAll(".nosotros-text p");
+
+  if (title) title.textContent = data.title;
+  if (paragraphs.length >= 2) {
+    paragraphs[0].innerHTML = data.p1;
+    paragraphs[1].innerHTML = data.p2;
+  }
 }
 
 // ─────────── INIT ───────────
 applyLanguage();
 renderProducts();
 renderCart();
+
+
+
+

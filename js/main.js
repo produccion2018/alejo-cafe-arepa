@@ -105,9 +105,15 @@ function renderProducts(filter = ""){
     );
 
     if(catProducts.length > 0){
+
+      // 🔥 TÍTULO CATEGORÍA 
       const catTitle = document.createElement("h2");
-      catTitle.className = "category-title";
-      catTitle.textContent = translate(cat, cat, cat); 
+      catTitle.className = "category-title text-center my-5";
+      catTitle.innerHTML = `
+        <span class="category-badge">
+          ${translate(cat, cat, cat)}
+        </span>
+      `;
       container.appendChild(catTitle);
 
       const row = document.createElement("div");
@@ -117,22 +123,34 @@ function renderProducts(filter = ""){
         const col = document.createElement("div");
         col.className = "col-12 col-sm-6 col-md-4 mb-3";
 
-       col.innerHTML = `
-  <div class="card product-card h-100" style="cursor:pointer;" onclick="openProductModal(${p.id})">
-    <img src="${p.img}" class="card-img-top" alt="${p.title[currentLang]}">
-    <div class="card-body">
-      <h5 class="card-title">${p.title[currentLang]}</h5>
-      <p class="card-text">${p.description[currentLang]}</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <span class="price-tag">€ ${p.price.toFixed(2)}</span>
-        <button class="btn btn-sm btn-primary" style="font-size:0.85rem;"
-          onclick="event.stopPropagation(); addToCart(${p.id})">
-          <i class="fa fa-cart-plus"></i> ${translate("Agregar","Add","Toevoegen")}
-        </button>
-      </div>
-    </div>
-  </div>
-`;
+        col.innerHTML = `
+          <div class="card product-card h-100" style="cursor:pointer;" onclick="openProductModal(${p.id})">
+            <img src="${p.img}" class="card-img-top" alt="${p.title[currentLang]}">
+            <div class="card-body">
+              <h5 class="card-title">${p.title[currentLang]}</h5>
+
+              <!-- ⭐ ESTRELLAS -->
+              <div class="stars mb-2">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+
+              <p class="card-text">${p.description[currentLang]}</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">€ ${p.price.toFixed(2)}</span>
+                <button class="btn btn-sm btn-primary" style="font-size:0.85rem;"
+                  onclick="event.stopPropagation(); addToCart(${p.id})">
+                  <i class="fa fa-cart-plus"></i>
+                  ${translate("Agregar","Add","Toevoegen")}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
 
         row.appendChild(col);
       });
@@ -304,7 +322,4 @@ function applyNosotrosLanguage(){
 applyLanguage();
 renderProducts();
 renderCart();
-
-
-
 

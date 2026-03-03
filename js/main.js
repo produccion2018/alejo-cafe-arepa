@@ -323,3 +323,22 @@ applyLanguage();
 renderProducts();
 renderCart();
 
+
+// ─────────── EVENTO PARA AGRANDAR IMAGEN NOSOTROS ───────────
+// 🔥 ZOOM IMAGEN NOSOTROS
+document.addEventListener("DOMContentLoaded", function () {
+  const imgNosotros = document.querySelector(".nosotros-img img");
+  const overlay = document.getElementById("imgOverlay");
+  const imgGrande = document.getElementById("imgGrande");
+
+  if (imgNosotros) {
+    imgNosotros.addEventListener("click", function () {
+      imgGrande.src = this.src;
+      overlay.style.display = "flex";
+    });
+
+    overlay.addEventListener("click", function () {
+      overlay.style.display = "none";
+    });
+  }
+});

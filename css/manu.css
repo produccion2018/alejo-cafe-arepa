@@ -1,0 +1,120 @@
+.navbar {
+  background: #eeeeee71;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px #00000026;
+  padding: 12px 20px;
+}
+
+/* LINKS DEL NAV */
+.navbar-nav .nav-link {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  color: #000 !important;
+  position: relative;
+  transition: 0.3s;
+}
+.navbar-nav .nav-link {
+  font-weight: 700;}
+
+
+/* Hover elegante */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background: #ffb300;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* BOTON HAMBURGUESA */
+.navbar-toggler {
+  border: 2px solid #ffb300;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffb300' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#subirBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(202,160,109,0.85);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+#subirBtn:hover {
+  transform: scale(1.1);
+}
+
+/* boton contato  */
+
+.btn-contacto {
+  position: fixed;
+  bottom: 95px; /* arriba del botón subir */
+  right: 25px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #caa06d, #a87c4f);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.btn-contacto:hover {
+  transform: translateY(-4px);
+}
+
+
+
+/* subir boton */
+
+.btn-subir-contacto {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #030303;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-subir-contacto:hover {
+  transform: scale(1.1);
+}

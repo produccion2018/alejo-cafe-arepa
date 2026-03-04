@@ -81,6 +81,7 @@
           </ul>
         </div>
       </nav>
+      
       <!-- HEADER -->
       <header class="menu-header text-center">
         <div class="top-logo">
@@ -113,10 +114,14 @@
             />
           </div>
         </div>
+
       </header>
       <section class="nosotros-section d-flex align-items-center" id="nosotros">
         <div class="nosotros-img">
-          <img src="./img/foto alejo.jpg" alt="Nuestro equipo" />
+          <img src="./img/foto alejo.jpg" 
+     alt="Nuestro equipo" 
+     id="fotoNosotros"
+     style="cursor:pointer;" />
         </div>
 
         <div class="nosotros-content d-flex">
@@ -259,12 +264,16 @@
   <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn-subir-contacto">
   ↑
 </button>
-
-    
+<div id="modalImagen" class="modal-imagen">
+  <span class="cerrar">&times;</span>
+  <img class="modal-contenido" id="imagenGrande">
+</div>
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JS -->
     <script src="./js/main.js"></script>
     <script src="./js/scroll.js"></script>
+
+    
   </body>
 </html>

@@ -44,18 +44,50 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.alejo.css" />
+    <link rel="stylesheet" href="./css/manu.css" />
   </head>
 
   <body class="alejandro-becerra-body">
     <!-- MARCO PRINCIPAL -->
     <div class="menu-frame container-fluid">
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <nav class="navbar navbar-expand-lg px-3 mb-4">
+        <a class="navbar-brand" href="#">Batter Boutique</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#titleMain">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#productsContainer">Menú</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <!-- HEADER -->
       <header class="menu-header text-center">
         <div class="top-logo">
           <img src="./img/logoAlejo.jpg" class="logo-circle" alt="Logo" />
         </div>
 
-        <h1 class="menu-title" id="titleMain">BATTER BOUTIQUE –</h1>
+        <h1 class="menu-title" id="titleMain">BATTER BOUTIQUE</h1>
         <p class="menu-subtitle" id="subtitleMain">pankes salados & drinks</p>
 
         <!-- SELECTOR IDIOMA -->
@@ -82,8 +114,7 @@
           </div>
         </div>
       </header>
-
-      <section class="nosotros-section d-flex align-items-center">
+      <section class="nosotros-section d-flex align-items-center" id="nosotros">
         <div class="nosotros-img">
           <img src="./img/foto alejo.jpg" alt="Nuestro equipo" />
         </div>
@@ -105,7 +136,8 @@
           </div>
         </div>
       </section>
-
+      
+      </div>
       <!-- CONTENIDO -->
       <main class="container menu-content">
         <div class="row g-4" id="productsContainer">
@@ -114,6 +146,19 @@
       </main>
 
       <!-- FOOTER -->
+
+      <section class="contacto-section" id="contacto">
+        <h2>Contacto</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.123456789!2d4.895168!3d52.370216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609eabc12345%3A0x123456789abcdef!2sHolanda!5e0!3m2!1ses!2ses!4v1234567890"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </section>
       <footer class="menu-footer text-center mt-5">
         <p class="footer-text">© 2026 Batter Boutique</p>
 
@@ -207,12 +252,19 @@
         </div>
       </div>
     </div>
-    <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JS -->
+  
     <div class="img-overlay" id="imgOverlay">
       <img id="imgGrande" />
     </div>
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn-subir-contacto">
+  ↑
+</button>
+
+    
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS -->
     <script src="./js/main.js"></script>
+    <script src="./js/scroll.js"></script>
   </body>
 </html>

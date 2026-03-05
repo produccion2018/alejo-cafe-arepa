@@ -455,3 +455,38 @@ body {
   from { transform: scale(0.8); }
   to { transform: scale(1); }
 }
+
+/* =========================
+   ANIMACION WHATSAPP
+========================= */
+
+.whatsapp-float{
+  animation: whatsappMauro 2s infinite;
+}
+
+@keyframes whatsappMauro{
+  0%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.15);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
+.cart-floating-btn{
+  animation: carritoMover 1.8s infinite;
+}
+
+@keyframes carritoMover{
+
+  0%{transform: scale(1);}
+  40%{transform: scale(1.15);}
+  60%{transform: scale(1.15);}
+  100%{transform: scale(1);}
+
+}

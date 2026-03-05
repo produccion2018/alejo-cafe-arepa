@@ -190,21 +190,33 @@ html {
    NAV CENTRADO EN MOBILE
 ========================= */
 
+/* MENU MOBILE ANIMADO */
+
 @media (max-width: 991px){
 
-  .navbar-collapse{
-    justify-content: center;
-  }
+.navbar-collapse{
+  text-align:center;
+  animation: menuFade 0.4s ease;
+}
 
-  .navbar-nav{
-    margin-left: 0 !important;
-    align-items: center;
-    text-align: center;
-  }
+.navbar-nav{
+  align-items:center;
+}
 
-  .navbar-nav .nav-link{
-    text-align: center;
-    font-size: 1.1rem;
-  }
+.navbar-nav .nav-link{
+  font-size:1.2rem;
+  padding:10px 0;
+}
 
+}
+
+@keyframes menuFade{
+  from{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }

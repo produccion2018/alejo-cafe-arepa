@@ -456,37 +456,52 @@ body {
   to { transform: scale(1); }
 }
 
+
 /* =========================
-   ANIMACION WHATSAPP
+   WHATSAPP ANIMACION PRO
 ========================= */
 
 .whatsapp-float{
-  animation: whatsappMauro 2s infinite;
+  animation: whatsappPulse 2s infinite;
 }
 
-@keyframes whatsappMauro{
+@keyframes whatsappPulse{
+
   0%{
     transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37,211,102,0.7);
   }
 
-  50%{
-    transform: scale(1.15);
+  70%{
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(37,211,102,0);
   }
 
   100%{
     transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37,211,102,0);
   }
+
 }
+
+
+
+/* =========================
+   ANIMACION CARRITO
+========================= */
 
 .cart-floating-btn{
-  animation: carritoMover 1.8s infinite;
+  animation: carritoBounce 2.2s infinite;
 }
 
-@keyframes carritoMover{
+@keyframes carritoBounce{
 
-  0%{transform: scale(1);}
-  40%{transform: scale(1.15);}
-  60%{transform: scale(1.15);}
-  100%{transform: scale(1);}
+  0%{transform: translateY(0);}
+  20%{transform: translateY(-6px);}
+  40%{transform: translateY(0);}
+  60%{transform: translateY(-3px);}
+  80%{transform: translateY(0);}
+  100%{transform: translateY(0);}
 
 }
+

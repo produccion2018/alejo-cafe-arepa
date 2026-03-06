@@ -325,3 +325,20 @@ renderCart();
 
 
 
+function activarAnimacionProductos(){
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show")
+    }
+  })
+})
+
+document.querySelectorAll(".product-card").forEach(card=>{
+  observer.observe(card)
+})
+
+}
+
+setTimeout(activarAnimacionProductos,500)

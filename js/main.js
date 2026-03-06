@@ -75,11 +75,32 @@ function addToCart(productId){
   const existing = cart.find(item => item.id === productId);
   if(existing){ existing.qty += 1; } 
   else { cart.push({...product, qty: 1}); }
+
+  document.getElementById("cartSound").play(); // 🔊 sonido
+
   saveCart(); renderCart();
-  Swal.fire({icon:"success",title:translate("Agregado al carrito","Added to cart","Toegevoegd aan winkelwagen"),timer:1200,showConfirmButton:false});
+  Swal.fire({
+  toast: true,
+  position: "top-end",
+  icon: "success",
+  title: "🛒 " + product.title[currentLang],
+  text: translate(
+    "Agregado al carrito",
+    "Added to cart",
+    "Toegevoegd aan winkelwagen"
+  ),
+  showConfirmButton: false,
+  timer: 1800,
+  timerProgressBar: true,
+  background: "#1f2937",
+  color: "#fff",
+  iconColor: "#22c55e"
+});
 }
 
 function removeFromCart(productId){
+
+  document.getElementById("removeSound").play();
   cart = cart.filter(item => item.id !== productId);
   saveCart(); renderCart();
 }
@@ -218,15 +239,15 @@ function checkout(){
   }
 
   Swal.fire({
-    title: translate("Finalizar pedido","Checkout","Bestelling afronden"),
-    html: `
-      <input type="text" id="swalName" class="swal2-input" placeholder="${translate("Nombre","Name","Naam")}">
-      <input type="text" id="swalAddress" class="swal2-input" placeholder="${translate("Dirección (solo si es Delivery)","Address (if Delivery)","Adres (alleen bij bezorging)")}">
-      <select id="swalType" class="swal2-input">
-        <option value="Delivery">${translate("Delivery","Delivery","Bezorging")}</option>
-        <option value="Retiro">${translate("Retiro en el local","Pickup at store","Afhalen in winkel")}</option>
-      </select>
-    `,
+  title: translate("Finalizar pedido","Checkout","Bestelling afronden"),
+  html: `
+    <input type="text" id="swalName" class="swal2-input" placeholder="${translate("Nombre","Name","Naam")}">
+    <input type="text" id="swalAddress" class="swal2-input" placeholder="${translate("Dirección (solo si es Delivery)","Address (if Delivery)","Adres (alleen bij bezorging)")}">
+    <select id="swalType" class="swal2-input">
+      <option value="Delivery">${translate("Delivery","Delivery","Bezorging")}</option>
+      <option value="Retiro">${translate("Retiro en el local","Pickup at store","Afhalen in winkel")}</option>
+    </select>
+  `,
     showCancelButton: true,
     confirmButtonText: translate("Enviar por WhatsApp","Send via WhatsApp","Versturen via WhatsApp"),
     cancelButtonText: translate("Cancelar","Cancel","Annuleren"),
